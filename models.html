@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Models</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">My App</a>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-2 sidebar">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Account Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="models.html">Models</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="saved-calls.html">Saved Calls</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="performance.html">Performance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="whitelist.html">White List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blacklist.html">Black List</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-12 col-md-10 main-content">
+        <h2>Models</h2>
+
+        <div class="mb-4 p-3" style="background-color: var(--beige-light); border: 1px solid #ccc; border-radius: 4px;">
+          <h4>Saved Models</h4>
+          <textarea class="form-control" rows="3" placeholder="List or description of saved models..."></textarea>
+          <div class="mt-2">
+            <button class="btn btn-custom me-2">Save Changes</button>
+            <button class="btn btn-secondary">Cancel</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-6 mb-4">
+            <div class="p-3" style="background-color: var(--beige-light); border: 1px solid #ccc; border-radius: 4px;">
+              <h4>Current Model</h4>
+              <label class="form-label mt-2">Model Name</label>
+              <input type="text" class="form-control mb-2" placeholder="Current Model Name" />
+              <label class="form-label">Test Prompt</label>
+              <input type="text" class="form-control mb-2" placeholder="Enter test prompt" />
+              <button class="btn btn-custom">Save</button>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 mb-4">
+            <div class="p-3" style="background-color: var(--beige-light); border: 1px solid #ccc; border-radius: 4px;">
+              <h4>Custom Model</h4>
+              <label class="form-label mt-2">Preview</label>
+              <input type="text" class="form-control mb-2" placeholder="Preview text" />
+              <label class="form-label">Prompt Name</label>
+              <input type="text" class="form-control mb-2" placeholder="Prompt name" />
+              <div class="mt-2">
+                <label class="form-label">Personality Traits</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="trait1" />
+                  <label class="form-check-label" for="trait1">Trait 1</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="trait2" />
+                  <label class="form-check-label" for="trait2">Trait 2</label>
+                </div>
+              </div>
+              <button class="btn btn-custom mt-3">Create &amp; Save Model</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
