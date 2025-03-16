@@ -73,7 +73,7 @@ const HomePage = () => {
             <div className="col-md-4 mb-3">
               <div className="model-box">
                 <h3>70 Year Old Woman</h3>
-                <p>A woman that couldn't even turn a TV on if the remote was in front of her.</p>
+                <p>A woman who has zero understanding of any technology.</p>
               </div>
             </div>
             <div className="col-md-4 mb-3">

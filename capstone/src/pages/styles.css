@@ -1,4 +1,3 @@
-
 .gjs-button {
   vertical-align: top;
   max-width: 100%;
@@ -205,13 +204,11 @@
   }
 }
 
-/* Custom styles for SCAM SCAM app */
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Transcript styling */
 .transcript-container {
   max-height: 500px;
   overflow-y: auto;
@@ -245,7 +242,6 @@ body {
   line-height: 1.4;
 }
 
-/* Card hover effects */
 .card {
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -255,13 +251,11 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Nav styling */
 .navbar-brand {
   font-weight: bold;
   font-size: 1.5rem;
 }
 
-/* Button custom styles */
 .btn-primary {
   background-color: #007bff;
   border-color: #007bff;
@@ -272,19 +266,16 @@ body {
   border-color: #0062cc;
 }
 
-/* Section headings */
 section h2 {
   border-bottom: 2px solid #f0f0f0;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
-/* Custom table styling */
 .table-hover tbody tr:hover {
   background-color: rgba(0, 123, 255, 0.05);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .navbar-brand {
     font-size: 1.2rem;
@@ -311,7 +302,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Star animation */
 body::before {
   content: "";
   position: fixed;
@@ -407,7 +397,6 @@ body::before {
   box-shadow: 0 8px 12px rgba(255, 255, 255, 0.2);
 }
 
-/* Navbar and button styles for space theme */
 .navbar {
   background-color: rgba(10, 10, 30, 0.8) !important;
 }
@@ -437,7 +426,6 @@ body::before {
   border-color: #4a4a6a;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .home-section-box, .model-box {
     background-color: rgba(20, 20, 50, 0.8);

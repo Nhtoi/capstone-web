@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 
 const ModelPerformance = () => {
-  // Sample data - in a real app, this would come from an API
   const [models] = useState([
     {
       id: 1,
@@ -11,8 +10,6 @@ const ModelPerformance = () => {
       averageDuration: "2:36",
       callsAnswered: 124,
       accuracy: 91,
-      callCompleteRate: 87,
-      scammerFrustrationRate: 78,
     },
     {
       id: 2,
@@ -20,8 +17,6 @@ const ModelPerformance = () => {
       averageDuration: "3:42",
       callsAnswered: 98,
       accuracy: 86,
-      callCompleteRate: 92,
-      scammerFrustrationRate: 65,
     },
     {
       id: 3,
@@ -29,8 +24,6 @@ const ModelPerformance = () => {
       averageDuration: "1:13",
       callsAnswered: 42,
       accuracy: 72,
-      callCompleteRate: 68,
-      scammerFrustrationRate: 45,
     }
   ]);
 
@@ -96,8 +89,6 @@ const ModelPerformance = () => {
                   <th>Avg. Call Duration</th>
                   <th>Calls Answered</th>
                   <th>Accuracy</th>
-                  <th>Call Complete Rate</th>
-                  <th>Scammer Frustration</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -108,8 +99,6 @@ const ModelPerformance = () => {
                     <td>{model.averageDuration}</td>
                     <td>{model.callsAnswered}</td>
                     <td>{model.accuracy}%</td>
-                    <td>{model.callCompleteRate}%</td>
-                    <td>{model.scammerFrustrationRate}%</td>
                     <td>
                       <button 
                         className={`btn btn-sm ${selectedModel === model.id ? "btn-primary" : "btn-outline-primary"}`}

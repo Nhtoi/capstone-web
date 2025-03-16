@@ -34,7 +34,6 @@ const PhoneListManager = () => {
       setBlacklist([...blacklist, newEntry]);
     }
     
-    // Clear form
     setNewNumber("");
     setNewName("");
     setNewNotes("");

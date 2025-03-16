@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 
 const SavedCalls = () => {
-  // Sample data for calls - in a real app, this would come from an API
   const [calls] = useState([
     {
       id: 1,
@@ -20,7 +19,6 @@ const SavedCalls = () => {
         { speaker: "AI", text: "Well, I think so. Is it the big beige box under my desk? My grandson set it up for me last Christmas." },
         { speaker: "Scammer", text: "Yes, that's your computer. I need you to turn it on and follow some steps." },
         { speaker: "AI", text: "Oh my, I'm not very good with technology. Which button do I press? There are so many lights!" },
-        // More transcript entries would go here
       ]
     },
     {
@@ -36,7 +34,6 @@ const SavedCalls = () => {
         { speaker: "AI", text: "Oh no! The IRS? I've never been in trouble with the government before! What did I do wrong?" },
         { speaker: "Scammer", text: "You have unpaid taxes from 2022-2023 and there's a warrant for your arrest unless you settle immediately." },
         { speaker: "AI", text: "Arrest?! I can't go to jail! I have a job interview tomorrow! How much do I owe? I'll pay anything!" },
-        // More transcript entries would go here
       ]
     },
     {
@@ -75,11 +72,9 @@ const SavedCalls = () => {
   const [filterModel, setFilterModel] = useState("all");
   const [filterScamType, setFilterScamType] = useState("all");
 
-  // Get unique models and scam types for filters
   const uniqueModels = [...new Set(calls.map(call => call.model))];
   const uniqueScamTypes = [...new Set(calls.map(call => call.scamType))];
 
-  // Filter calls based on selected filters
   const filteredCalls = calls.filter(call => {
     return (filterModel === "all" || call.model === filterModel) && 
            (filterScamType === "all" || call.scamType === filterScamType);
