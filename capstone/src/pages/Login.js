@@ -6,40 +6,63 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isNewUser, setIsNewUser] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setMessage(null);
+    setError(null);
+    
     const endpoint = isNewUser ? "/signup" : "/login";
+    
     try {
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
+      const response = await fetch(`http://127.0.0.1:5000${endpoint}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
+        credentials: "omit" 
       });
   
       const data = await response.json();
   
       if (response.ok) {
-        alert(data.message); 
+        setMessage(data.message);
+        if (!isNewUser) {
+          console.log("Login successful");
+        }
       } else {
-        alert(`Error: ${data.error}`); 
+        setError(data.error || "An unknown error occurred");
       }
     } catch (error) {
-      alert("An error occurred. Please try again.");
+      setError("Connection failed. Make sure the backend server is running.");
       console.error("Error:", error);
+    } finally {
+      setLoading(false);
     }
   };
-  
 
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
+          {message && (
+            <div className="alert alert-success" role="alert">
+              {message}
+            </div>
+          )}
+          {error && (
+            <div className="alert alert-danger" role="alert">
+              {error}
+            </div>
+          )}
           <div className="card">
             <div className="card-header bg-light">
-              <h3 className="text-center">{isNewUser ? "Create Account" : "Login to SCAM SCAM"}</h3>
+              <h3 className="text-center">{isNewUser ? "Create Account" : "Login"}</h3>
             </div>
             <div className="card-body">
               <form onSubmit={handleSubmit}>
@@ -66,15 +89,23 @@ const LoginPage = () => {
                   />
                 </div>
                 <div className="d-grid mb-3">
-                  <button type="submit" className="btn btn-primary">
-                    {isNewUser ? "Sign Up" : "Login"}
+                  <button 
+                    type="submit" 
+                    className="btn btn-primary"
+                    disabled={loading}
+                  >
+                    {loading ? 'Processing...' : (isNewUser ? "Sign Up" : "Login")}
                   </button>
                 </div>
                 <div className="text-center">
                   <button
                     type="button"
                     className="btn btn-link"
-                    onClick={() => setIsNewUser(!isNewUser)}
+                    onClick={() => {
+                      setIsNewUser(!isNewUser);
+                      setMessage(null);
+                      setError(null);
+                    }}
                   >
                     {isNewUser ? "Already have an account? Login" : "New user? Create account"}
                   </button>
