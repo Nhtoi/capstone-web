@@ -10,7 +10,7 @@ DB_CONFIG = {
     "dbname": "user_auth",  
     "user": "postgres",
     "password": "Jaskaran3000",
-    "host": "34.139.77.105",  
+    "host": "35.188.185.40",  
     "port": "5432"
 }
 
