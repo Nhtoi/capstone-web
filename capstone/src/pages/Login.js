@@ -19,7 +19,7 @@ const LoginPage = () => {
     const endpoint = isNewUser ? "/signup" : "/login";
     
     try {
-      const response = await fetch(`http://127.0.0.1:5000${endpoint}`, {
+      const response = await fetch(`http://35.222.77.247:5000${endpoint}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
